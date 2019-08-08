@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -42,12 +43,19 @@ public class DPHelper extends SQLiteOpenHelper {
         long result = dp.insert("Utilizador",null,cv);
 
 
-        return 0;
-    }
-    public String ValidarLogin (String username, String password){
 
-        return "";
-        
+        return result;
+    }
+    public String ValidarLogin (String email, String password){
+
+            SQLiteDatabase dp = getReadableDatabase();
+
+            Cursor c = (Cursor) dp.rawQuery ("Select * from Utilizador WHERE email=? AND password=?", new String [] {email,password});
+            if (c.getCount() >0){
+                return "ok";
+            }else {
+                return "ERRO";
+            }
     }
 
 }

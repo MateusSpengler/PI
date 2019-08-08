@@ -40,28 +40,30 @@ public class Registrar_Activity extends AppCompatActivity {
 
                 if (password.equals("")){
 
-                    Toast.makeText(Registrar_Activity.this, "Preencha o campo Password",Toast.LENGTH_SHORT);
+                    Toast.makeText(Registrar_Activity.this, "Preencha o campo Password",Toast.LENGTH_SHORT).show();
                 }else if (password2.equals("")){
 
-                    Toast.makeText(Registrar_Activity.this, "Preencha o campo Password2",Toast.LENGTH_SHORT);
+                    Toast.makeText(Registrar_Activity.this, "Preencha o campo Password2",Toast.LENGTH_SHORT).show();
                 }else if (email.equals("")){
 
-                    Toast.makeText(Registrar_Activity.this, "Preencha o campo Email",Toast.LENGTH_SHORT);
+                    Toast.makeText(Registrar_Activity.this, "Preencha o campo Email",Toast.LENGTH_SHORT).show();
                 }else {
 
                     long res =dp.CriarUtilizador(email,password);
 
                     if(res >0){
 
-                        Toast.makeText(Registrar_Activity.this, "Registro OK",Toast.LENGTH_SHORT);
+                        Toast.makeText(Registrar_Activity.this, "Registro OK",Toast.LENGTH_SHORT).show();
 
                     }else{
 
-                        Toast.makeText(Registrar_Activity.this, "Registro Invalido",Toast.LENGTH_SHORT);
+                        Toast.makeText(Registrar_Activity.this, "Registro Invalido",Toast.LENGTH_SHORT).show();
                     }
 
 
                 }
+
+                finish();
 
 
             }
