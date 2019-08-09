@@ -13,7 +13,7 @@ public class Login_Activity extends AppCompatActivity {
 
     EditText et_email,et_password;
     Button btn_login;
-
+    int aux=0;
 DPHelper dp;
 
 
@@ -38,31 +38,37 @@ DPHelper dp;
             String email = et_email.getText().toString();
             String password = et_password.getText().toString();
 
+                if (email.equals("")) {
 
-            if (email.equals("")){
+                    Toast.makeText(Login_Activity.this, "Coloque o email", Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(Login_Activity.this,"Coloque o email",Toast.LENGTH_SHORT).show();
+                } else if (password.equals("")) {
 
-            }else if(password.equals("")) {
+                    Toast.makeText(Login_Activity.this, "Coloque a password", Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(Login_Activity.this,"Coloque a password",Toast.LENGTH_SHORT).show();
+                } else {
 
-            }else {
+                    String res = dp.ValidarLogin(email, password);
 
-                String res = dp.ValidarLogin(email,password);
+                    if (res.equals("ok")) {
+                        Toast.makeText(Login_Activity.this, "Login efetuado com sucesso", Toast.LENGTH_SHORT).show();
 
-                if(res.equals("ok")){
-                    Toast.makeText(Login_Activity.this,"Login efetuado com sucesso",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(Login_Activity.this,"Login não efetuado ",Toast.LENGTH_SHORT).show();
+                        aux=1;
+
+                    } else {
+                        Toast.makeText(Login_Activity.this, "Login não efetuado ", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
 
-                Intent vai_pro_mapa = new Intent(Login_Activity.this, mapa_Activity.class);
-                startActivity(vai_pro_mapa);
+                if(aux==1) {
 
-                finish();
-            }
+
+                    Intent vai_pro_mapa = new Intent(Login_Activity.this, mapa_Activity.class);
+                    startActivity(vai_pro_mapa);
+
+                    finish();
+                }
+                }
         });
 
 
