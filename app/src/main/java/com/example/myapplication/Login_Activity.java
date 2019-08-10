@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Login_Activity extends AppCompatActivity {
+public class Login_Activity extends Activity {
 
     EditText et_email,et_password;
     Button btn_login;
@@ -21,6 +22,7 @@ DPHelper dp;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_);
+
 
         dp = new DPHelper(this);
 
