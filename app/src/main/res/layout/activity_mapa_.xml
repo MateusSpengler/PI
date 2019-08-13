@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mapa_Activity">
 
+    <EditText android:id="@+id/nome"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:textSize="16dp"
+        android:hint="Digite seu nome"
+        android:layout_gravity="center"
+        android:layout_marginTop="220dp"
+        android:inputType="textEmailAddress"/>
 
-   <EditText
-       android:id="@+id/nome"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:hint="Digite seu Nome"/>
+    <EditText android:id="@+id/numero"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:textSize="16dp"
+        android:hint="Digite o número do ônibus"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:inputType="textEmailAddress"/>
 
-    <EditText
-       android:id="@+id/numero"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content" />
+    <Button android:id="@+id/rastrear"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:text="Iniciar"
+        android:layout_gravity="center"
+        android:background="@drawable/buttonshape"
+        android:textColor="@color/cardview_light_background"
+        android:layout_marginTop="30dp"/>
 
 
 </LinearLayout>
