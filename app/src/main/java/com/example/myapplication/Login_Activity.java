@@ -24,8 +24,14 @@ DPHelper dp;
         setContentView(R.layout.activity_login_);
 
 
+
         dp = new DPHelper(this);
 
+       /* dp.CriarUtilizador("diogo","alemao");
+        dp.CriarUtilizador("boca","corno");
+        dp.CriarUtilizador("larson","gado");
+        dp.CriarUtilizador("joao","jose");
+*/
         et_email = (EditText) findViewById(R.id.lgn_email);
         et_password = (EditText) findViewById( R.id.lgn_password);
 

@@ -11,6 +11,14 @@ public class DPHelper extends SQLiteOpenHelper {
     private static int versao=1;
     private static String nome = "Login_Registro_BaseDados.dp";
 
+    Login_Activity lg = new Login_Activity();
+
+    String aux;
+    String aux2;
+
+
+
+
 
     public DPHelper(Context context) {
         super(context, nome, null, versao);
@@ -23,13 +31,16 @@ public class DPHelper extends SQLiteOpenHelper {
         String str = "CREATE TABLE Utilizador (email TEXT PRIMARY KEY, password TEXT)";
         dp.execSQL(str);
 
+
+
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase dp, int oldVersion, int newVersion) {
 
-        dp.execSQL("DROP TABLE IF EXISTS Utilizador");
-        onCreate(dp);
+       /* dp.execSQL("DROP TABLE IF EXISTS Utilizador");
+        onCreate(dp);*/
     }
 
     public long CriarUtilizador ( String email,String password){
